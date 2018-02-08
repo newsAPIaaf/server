@@ -11,6 +11,16 @@ var users = require('./routes/users');
 var bmi   = require('./routes/bmi')
 
 var app = express();
+const mongoose = require('mongoose');
+mongoose.connect(`mongodb://angga:angga@ds135926.mlab.com:35926/library`);
+
+//db connection status
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('MLABS Connected');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,3 +1,4 @@
+const Food = require('../models/Food')
 const axios = require('axios')
 
 let findRecipe = (req, res) => {
@@ -5,12 +6,12 @@ let findRecipe = (req, res) => {
     .then(response => {
       let arrFood = []
       response.data.hits.map((x, i) => {
-        let label = x.recipe.label
+        let name = x.recipe.label
         let image = x.recipe.image
         let ingredient = x.recipe.ingredientLines
         let diet = x.recipe.dietLabels
         let health = x.recipe.healthLabels
-        arrFood.push({label, image, ingredient, diet, health})
+        arrFood.push({name, image, ingredient, diet, health})
       })
       res.status(200).json({
         msg: 'list all recipe',

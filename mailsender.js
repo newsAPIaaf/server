@@ -21,7 +21,7 @@ class Mail {
 
     const mailOptions = {
       from   : 'resapirecipe@gmail.com',
-      to     : this.emailTujuan, 
+      to     : this.emailTujuan,
       subject: 'Enjoy create healthy foods' ,
       html   : `
       <table class="full-width-container" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" bgcolor="#eeeeee" style="width: 100%; height: 100%; padding: 30px 0 30px 0;">
@@ -31,37 +31,37 @@ class Mail {
           <table class="container" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#ffffff" style="width: 700px;">
             <tr>
               <td align="center" valign="top">
-  
+
                 <!-- / Hero subheader -->
                 <table class="container hero-subheader" border="0" cellpadding="0" cellspacing="0" width="620" style="width: 620px;">
                   <tr>
-                    <td class="hero-subheader__title" style="font-size: 43px; font-weight: bold; padding: 80px 0 15px 0;" align="left">Product Design Portfolio</td>
+                    <td class="hero-subheader__title" style="font-size: 43px; font-weight: bold; padding: 80px 0 15px 0;" align="left">${this.name}</td>
                   </tr>
                 </table>
                 <!-- /// Hero subheader -->
-  
-  
+
+
                 <!-- / Half block -->
                 <table class="container half-block" border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 25px;">
                   <tr>
                     <td>
                       <table class="container" border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
-                          <td class="half-block__image" style="width: 353px; height: 325px;" width="353" height="325" background="http://dev2.slicejack.com/portfolio-email/img/img14.jpg">
+                          <td class="half-block__image" style="width: 353px; height: 325px;" width="353" height="325" background="${this.image}">
                           <!--[if gte mso 9]>
                           <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: 353px; height: 325px;" width="353" height="325">
-                          <v:fill type="frame" src="http://dev2.slicejack.com/portfolio-email/img/img14.jpg" color="#488bd3" />
+                          <v:fill type="frame" src="${this.image}" color="#488bd3" />
                           <v:textbox inset="0,0,0,0">
                           <![endif]-->
-  
+
                           <!--[if gte mso 9]>
                           </v:textbox>
                           </v:rect>
                           <![endif]-->
                           </td>
-  
+
                           <td class="half-block__content" style="width: 50%; padding: 0 25px 0 25px; font-size: 16px; line-height: 27px; color: #969696; text-align: center;">
-                            ${this.name}, ${this.ingredient}, ${this.image}, ${this.diet}, ${this.health}
+                            Ingredients : ${this.ingredient}
                           </td>
                         </tr>
                       </table>
@@ -69,7 +69,7 @@ class Mail {
                   </tr>
                 </table>
                 <!-- /// Half block -->
-  
+
                 <!-- / Half block -->
                 <table class="container half-block" border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
@@ -77,16 +77,17 @@ class Mail {
                       <table class="container" border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
                           <td class="half-block__content" style="width: 50%; padding: 0 25px 0 25px; font-size: 16px; line-height: 27px; color: #969696; text-align: center;">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                            health : ${this.health}
+                            diet : ${this.diet}
                           </td>
-  
-                          <td class="half-block__image" style="width: 353px; height: 325px;" width="353" height="325" background="http://dev2.slicejack.com/portfolio-email/img/img15.jpg">
+
+                          <td class="half-block__image" style="width: 353px; height: 325px;" width="353" height="325" background="${this.image}">
                           <!--[if gte mso 9]>
                           <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: 353px; height: 325px;" width="353" height="325">
-                          <v:fill type="frame" src="http://dev2.slicejack.com/portfolio-email/img/img15.jpg" color="#488bd3" />
+                          <v:fill type="frame" src="${this.image}" color="#488bd3" />
                           <v:textbox inset="0,0,0,0">
                           <![endif]-->
-  
+
                           <!--[if gte mso 9]>
                           </v:textbox>
                           </v:rect>
@@ -98,7 +99,7 @@ class Mail {
                   </tr>
                 </table>
                 <!-- /// Half block -->
-  
+
                 <!-- / Divider -->
                 <table class="container" border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 25px;" align="center">
                   <tr>
@@ -112,7 +113,7 @@ class Mail {
                   </tr>
                 </table>
                 <!-- /// Divider -->
-  
+
                 <!-- / CTA Block -->
                 <table class="container cta-block" border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
@@ -121,14 +122,11 @@ class Mail {
                         <tr>
                           <td class="cta-block__title" style="padding: 35px 0 0 0; font-size: 26px; text-align: center;">About Us</td>
                         </tr>
-  
+
                         <tr>
-                          <td class="cta-block__content" style="padding: 20px 0 27px 0; font-size: 16px; line-height: 27px; color: #969696; text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat.</td>
+                          <td class="cta-block__content" style="padding: 20px 0 27px 0; font-size: 16px; line-height: 27px; color: #969696; text-align: center;">Laper ? Resapi aja..</td>
                         </tr>
-  
+
                         <tr>
                           <td align="center">
                             <table class="container" border="0" cellpadding="0" cellspacing="0">
@@ -145,7 +143,7 @@ class Mail {
                   </tr>
                 </table>
                 <!-- /// CTA Block -->
-  
+
                 <!-- / Divider -->
                 <table class="container" border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 25px;" align="center">
                   <tr>

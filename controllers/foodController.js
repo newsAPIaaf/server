@@ -26,6 +26,7 @@ let findRecipe = (req, res) => {
 }
 
 let saveRecipe = (req, res) => {
+  console.log(req.body, 'req, body');
   let objFood = {
     name: req.body.name,
     image: req.body.image,
@@ -33,7 +34,8 @@ let saveRecipe = (req, res) => {
     diet: req.body.diet,
     health: req.body.health
   }
-  let mail = new Mail('angrha@gmail.com', objFood)
+  console.log(objFood, 'ini obj');
+  let mail = new Mail(req.body.email, objFood)
   mail.send()
 
   res.send(objFood)

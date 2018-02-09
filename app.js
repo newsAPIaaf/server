@@ -1,17 +1,18 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var cors = require('cors')
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const cors = require('cors')
 require('dotenv').config()
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var bmi   = require('./routes/bmi')
+const index = require('./routes/index');
+const users = require('./routes/users');
+const bmi   = require('./routes/bmi')
+const foods = require('./routes/foods');
 
-var app = express();
+const app = express();
 const mongoose = require('mongoose');
 mongoose.connect(`mongodb://angga:angga@ds135926.mlab.com:35926/library`);
 
@@ -39,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/bmi', bmi)
+app.use('/api/foods', foods)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
